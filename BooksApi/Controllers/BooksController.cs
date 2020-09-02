@@ -25,18 +25,25 @@ namespace BooksApi.Controllers
             _booksService = booksService;
         }
 
+        [HttpGet]
+        public ActionResult<List<Book>> GetAllBooks()
+        {
+            return _booksService.GetAllBooks();
+        }
+
         /// <summary>
         /// Aggregation example. Returns a list of books by category. Swagger does not work with default parameters.  PLEASE USE POSTMAN FOR A TEST! 
         /// </summary>
         /// <returns></returns>
         /// <remarks>
-        /// <font color="red"> /api/books - return all available books,   /api/books/computers - return only computers book,   /api/books/cooking - only cooking books </font>
+        /// <font color="red"> /api/books/all - return all available books,   /api/books/computers - return only computers book,   /api/books/cooking - only cooking books </font>
         /// </remarks>
         [HttpGet("{category:category?}")]
         public ActionResult<List<Book>> GetBookCategory(Category category) {
             var displayed = category.GetDisplayName();
             return _booksService.GetByCategory(displayed);
-                }
+        }
+
 
         /// <summary>
         ///Return book with id
@@ -53,6 +60,9 @@ namespace BooksApi.Controllers
             return Ok(book);
         }
 
+        /// <remarks>
+        /// <h3 style="color:red"> Please remove id tag from example values when try it out! </h3>
+        /// </remarks>
         [HttpPost]
         public ActionResult<Book> Create(Book book)
         {
@@ -60,7 +70,8 @@ namespace BooksApi.Controllers
             return CreatedAtRoute("GetBook", new { id = book.Id }, book);
         }
 
-        [HttpPut("{id:length(24)}")]
+        //[HttpPut("{id:length(24)}")]
+        [HttpPut]
         public ActionResult Update(Book bookIn)
         {
             var book = _booksService.Get(bookIn.Id);
@@ -71,7 +82,7 @@ namespace BooksApi.Controllers
 
             _booksService.Update(bookIn.Id, bookIn);
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id:length(24)}")]

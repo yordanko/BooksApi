@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "5f4d60f87ee763a62eec85f8"
+  },
+  "Name": "Design Patterns",
+  "Price": 54.93,
+  "Category": "Computers",
+  "Author": "Ralph Johnson"
+},{
+  "_id": {
+    "$oid": "5f4d60f87ee763a62eec85f9"
+  },
+  "Name": "Clean Code",
+  "Price": 43.15,
+  "Category": "Computers",
+  "Author": "Robert C. Martin"
+},{
+  "_id": {
+    "$oid": "5f4d60f87ee763a62eec85f4"
+  },
+  "Name": "My Book Name Amended",
+  "Price": "100",
+  "Category": "string",
+  "Author": "string"
+},{
+  "_id": {
+    "$oid": "5f4e39d26a16013fdc737767"
+  },
+  "Name": "Pro ASP.NET Core",
+  "Price": 54.99,
+  "Category": "Computers",
+  "Author": "Adam Freeman"
+},{
+  "_id": {
+    "$oid": "5f4e39e46a16013fdc737768"
+  },
+  "Name": "Pro ASP.NET Core 3.1",
+  "Price": 64.99,
+  "Category": "Computers",
+  "Author": "Adam Freeman"
+},{
+  "_id": {
+    "$oid": "5f4e3db66a16013fdc737769"
+  },
+  "Name": "5 Ingredients",
+  "Price": 15.99,
+  "Category": "Cooking",
+  "Author": "Jamie Oliver"
+},{
+  "_id": {
+    "$oid": "5f4e3e0d6a16013fdc73776a"
+  },
+  "Name": "All About Dinner",
+  "Price": 5.99,
+  "Category": "Cooking",
+  "Author": "Molly Stevens"
+}]

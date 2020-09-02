@@ -21,8 +21,8 @@ namespace BooksApi.Services
             _books = database.GetCollection<Book>(settings.BooksCollectionName);
         }
 
-        //public List<Book> Get() =>
-        //    _books.Find(book => true).ToList();
+        public List<Book> GetAllBooks() =>
+            _books.Find(book => true).ToList();
 
         public List<Book> GetByCategory(string category)
         {
@@ -35,7 +35,7 @@ namespace BooksApi.Services
                 return result.ToList();
             }
             
-            return _books.Find(book => true).ToList();
+            return GetAllBooks();
         }
             
 
